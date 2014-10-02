@@ -17,4 +17,6 @@ RUN apt-get install -y lxc-docker-1.2.0
 # Clean up APT and temporary files when done
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN gpasswd -a jenkins docker
+
 USER jenkins
