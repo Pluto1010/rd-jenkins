@@ -1,10 +1,10 @@
 FROM          jenkins:weekly
 MAINTAINER    Dennis Schulz <dennis@port42.org>
 
-USER root
+# USER root
 
 # Ignore APT warnings about not having a TTY
-#ENV DEBIAN_FRONTEND noninteractive
+# ENV DEBIAN_FRONTEND noninteractive
 
 # RUN apt-get update -y
 # RUN apt-get install -y apt-transport-https
@@ -16,8 +16,7 @@ USER root
 
 # Clean up APT and temporary files when done
 # RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-RUN gpasswd -a jenkins docker
+# RUN gpasswd -a jenkins docker
 
 VOLUME [ "/var/run/docker.sock", "/usr/bin/docker" ]
 
